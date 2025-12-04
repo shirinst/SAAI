@@ -15,7 +15,11 @@
 ```bash
 # Добавить раздел про обновление
 echo "=== ОБНОВЛЕНИЕ AKASH CLI ==="
-# Проверка текущей версии
+apt update
+apt upgrade -y
+# Требуется установленный jq
+apt install jq -u
+# Проверка текущей версии Akash CLI
 AKASH_LATEST=$(curl -s https://api.github.com/repos/akash-network/node/releases/latest | jq -r '.tag_name')
 echo "Последняя версия: $AKASH_LATEST"
 
